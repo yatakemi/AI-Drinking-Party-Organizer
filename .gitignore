@@ -2,4 +2,7 @@ node_modules
 
 /.cache
 /build
-.env
+*.env
+*.bak
+
+env_variables.yaml

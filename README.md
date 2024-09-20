@@ -1,40 +1,33 @@
-# Welcome to Remix!
+# 飲み会幹事 AI アシスタント
 
-- 📖 [Remix docs](https://remix.run/docs)
+飲み会幹事に任命された時に、調整事項を入力することで面倒なお店選びを AI が実施してくれるサービス
 
-## Development
+## 利用している外部サービス
 
-Run the dev server:
+- Google Vertex AI API
+- Google Place API(New)
 
-```shellscript
-npm run dev
-```
+## 動作に必要な環境変数
 
-## Deployment
+ローカル環境の場合は、.env ファイルを作成して以下を設定する。
 
-First, build your app for production:
+- PLACE_API_KEY
+  - Place API(New)が利用可能な API キー
+- PROJECT_NAME
+  - Google Cloud Project name
 
-```sh
-npm run build
-```
+## 動作環境
 
-Then run the app in production mode:
+- App Engine
+  - 設定は[app.yaml](./app.yaml)
+  - デプロイは`pnpm run deploy`を実行する
+    - 環境変数として `env_variables.yaml`を作成してから deploy すること
+      ```yaml
+      env_variables:
+        PLACE_API_KEY: xxxxxxxx
+        PROJECT_NAME: xxxxxxxx
+      ```
 
-```sh
-npm start
-```
+---
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+[AI Hackathon with Google Cloud](https://googlecloudjapanaihackathon.devpost.com/) 提出作品
