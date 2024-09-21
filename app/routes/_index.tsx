@@ -23,6 +23,11 @@ export const meta: MetaFunction = () => {
   return [
     { title: '飲み会幹事AIアシスタント' },
     { name: 'description', content: '飲み会の計画立案をサポートします' },
+    {
+      'og:title': '飲み会幹事AIアシスタント',
+      'og:description': '飲み会の計画立案をサポートします',
+      'og:image': `/logo.png`,
+    },
   ]
 }
 
