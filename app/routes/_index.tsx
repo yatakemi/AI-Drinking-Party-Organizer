@@ -20,13 +20,17 @@ import {
 } from '~/services/vertex-ai.server'
 
 export const meta: MetaFunction = () => {
+  const projectId = process.env.PROJECT_NAME
   return [
     { title: '飲み会幹事AIアシスタント' },
     { name: 'description', content: '飲み会の計画立案をサポートします' },
     {
-      'og:title': '飲み会幹事AIアシスタント',
-      'og:description': '飲み会の計画立案をサポートします',
-      'og:image': `/logo.png`,
+      property: 'og:image',
+      content: `https://${projectId}.an.r.appspot.com/logo.png`,
+    },
+    {
+      property: 'og:url',
+      content: `https://${projectId}.an.r.appspot.com/`,
     },
   ]
 }
