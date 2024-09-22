@@ -121,7 +121,7 @@ export function MultiStepForm() {
                 htmlFor="purpose"
                 className="text-lg font-semibold text-primary mb-2 block"
               >
-                どのよう飲み会をお考えですか？{' '}
+                どのような飲み会をお考えですか？
                 <Label className="text-red-500">*</Label>
               </Label>
               <Input
